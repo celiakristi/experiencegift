@@ -1,0 +1,24 @@
+body {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    margin: 0;
+    font-family: Ubuntu;
+}
+
+.inline-block { display: inline-block; }
+
+#contentWrapper {
+    width: 75%;
+    max-width: 1800px;
+    min-width: 300px;
+    height: auto;
+    margin: 1rem auto;
+    position: relative;
+    padding: 15px
+}
+
+.flex-wrapper {
+    display: flex;
+    justify-content: space-between;
+}
