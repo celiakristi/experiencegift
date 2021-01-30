@@ -8,12 +8,14 @@
     margin: 0;
 }
 
+#sliderContainer { overflow: hidden; }
+
 .slider-overflow {
     width: auto;
     min-width: 280px;
     position: relative;
     margin: auto;
-    padding: 0 15%;
+    padding: 0 10%;
     height: 40vw;
     max-height: 800px;
 }
@@ -52,7 +54,6 @@
 #outerPreview { background-image: url('../images/PreviewC.jpg'); }
 
 .slider-button {
-    cursor: pointer;
     position: absolute;
     top: 50%;
     width: auto;

@@ -1,8 +1,9 @@
 .form-item {
     /* background: yellow; */
-    margin: 5px auto;
+    margin: 10px auto;
     display: inline-block;
-    flex-grow: 1;
+    padding: 10px;
+    box-sizing: border-box;
 }
 
 .form-item-container {
@@ -17,18 +18,24 @@
     border: solid 1px lightgray;
     border-radius: 3px;
     width: 100%;
+    padding: 1.5rem;
     box-sizing: border-box;
+    vertical-align: middle;
 }
 
 textarea.form-layout { height: 100%; }
 
 img#uploadedImage {
-    height: 100%;
-    width: 100%;
-    max-width: 360px;
-    object-fit: cover;
-    cursor: pointer;
+    height: 15vw;
+    width: 20vw;
+    max-width: 350px;
+    max-height: 250px;
+    object-fit: fill;
     margin: auto;
+}
+
+#imageUpload + label {
+    margin: 0 auto;
 }
 
 input::-webkit-outer-spin-button,
@@ -40,35 +47,66 @@ input[type=number] {
   -moz-appearance: textfield;
 }
 textarea { resize: none; }
-textarea, input { border: none; }
+textarea, input { border: none; font-family: Ubuntu; }
 
+#textAreaContainer div:first-child { width: 100%; }
 #characterInfo {
     position: absolute;
     right: 0;
     bottom: 0;
+    padding: 5px;
+    font-size: small;
+    color: grey;
 }
 
 #displayedText {
     transform: rotateX(19deg) rotateY(17deg) rotateZ(-51deg) skew(-4deg,-1deg);
     position: absolute;
-    width: 37%;
-    height: 37%;
-    top: 20%;
+    width: 40%;
+    height: 45%;
+    top: 17%;
     left: 19%;
     background: none;
-    padding: 5px;
+    padding: 20px;
     box-sizing: border-box;
+    font-size: 100%;
+    font-style: italic;
 }
 
 #displayedImage{
-    transform: rotateX(24deg) rotateY(20deg) rotateZ(-64deg) skew(3deg,3deg);
+    transform: perspective(800px) rotateX(8deg) rotateY(4deg) rotateZ(-54deg) skew(7deg,-7deg);
     position: absolute;
-    width: 45%;
-    height: 50%;
-    top: 25%;
-    left: 43%;
-    /* background: green; */
-    padding: 5px;
+    width: 40%;
+    height: 53%;
+    top: 24%;
+    right: 14%;
+    padding: 20px;
     box-sizing: border-box;
 }
+
+#currencyDropdownWrapper {
+    width: 20vw;
+}
+
+#currencyOptions {
+    background: lightgoldenrodyellow;
+    position: absolute;
+    z-index: 5;
+    width: auto !important;
+}
+ul.currency-option-ul { margin: 0; padding: 10px; }
+li.currency-option-li { list-style: none; margin: 0; padding: 0; display: flex; }
+.currency-key { width: 5vw; }
+.currency-value { width: 20vw; }
+.number-button img { width: 1.5rem; fill: grey; }
+
+.arrow {
+    border: solid black;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+}
+.down {
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
 }

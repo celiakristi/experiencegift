@@ -7,6 +7,10 @@ body {
 }
 
 .inline-block { display: inline-block; }
+.border-box-sizing { box-sizing: border-box; }
+.flex-grow-1 { flex-grow: 1; }
+.flex-grow-2 { flex-grow: 2; }
+.pointer { cursor: pointer; }
 
 #contentWrapper {
     width: 75%;
