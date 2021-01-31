@@ -7,6 +7,8 @@ let showCurrencyOption = false;
 const minQuantity = 1;
 const maxQuantity = 10;
 let quantity = 1;
+const minValue = 25;
+const maxValue = 10000;
 
 function initiateEmojiLb() {
   new EmojiPicker();
@@ -44,6 +46,16 @@ function updateDisplayedText(value) {
   $('#textInput, #displayedText').val(value);
 }
 
+function validateValue(value) {
+  if (minValue < value && value < maxValue) {
+    return;
+  } else if (value < minValue) {
+    value = minValue
+  } else if (value > maxValue) {
+    value = maxValue;
+  }
+  $('#valueInput').val(value);
+}
 function loadCurrency() {
   fetch(apiURL)
     .then(response => response.json())
@@ -82,7 +94,7 @@ function toggleCurrencyOption() {
 }
 
 function openCurrencyOption(isOpen) {
-  $('#currencyOptions').css('visibility', isOpen ? 'visible' : 'hidden');
+  $('#currencyOptionsWrapper').css('visibility', isOpen ? 'visible' : 'hidden');
   showCurrencyOption = isOpen;
 }
 

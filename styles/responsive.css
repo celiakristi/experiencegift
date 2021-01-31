@@ -18,12 +18,16 @@
 }
 
 
-@media screen and  (min-width:1280px)  { /* more than 1281 < */ 
+@media screen and  (min-width:1280px)  { /* more than 1280 < */ 
     #contentWrapper { height: 100vh; }
     #formWrapper {
         flex-direction: row;
     }
+    #formWrapper > div.form-item:not(:last-child) {
+        margin-right: 15px;
+    }
     .form-item { margin: 10px 0; }
+    /* #inputFormWrapper, #textInput { height: 100%; } */
     .slider-item {
         max-height: 40vw;
     }
@@ -33,11 +37,12 @@
     }
 }
 
-@media screen and (max-width: 1279px)  { /* phone */ 
+@media screen and (max-width: 1279px)  { /* mobile view */ 
     #formWrapper {
         flex-direction: column;
     }
     .form-item { width: 100%; margin: 10px auto; }
+    #inputFormWrapper, #textInput { min-height: 25vh; }
     .slider-item {
         max-height: 40vw;
     }

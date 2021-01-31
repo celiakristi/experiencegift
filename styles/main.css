@@ -4,6 +4,7 @@ body {
     position: absolute;
     margin: 0;
     font-family: Ubuntu;
+    color: #333;
 }
 
 .inline-block { display: inline-block; }

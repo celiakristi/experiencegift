@@ -1,8 +1,5 @@
 .form-item {
-    /* background: yellow; */
     margin: 10px auto;
-    display: inline-block;
-    padding: 10px;
     box-sizing: border-box;
 }
 
@@ -18,25 +15,38 @@
     border: solid 1px lightgray;
     border-radius: 3px;
     width: 100%;
-    padding: 1.5rem;
     box-sizing: border-box;
-    vertical-align: middle;
 }
+
 
 textarea.form-layout { height: 100%; }
 
 img#uploadedImage {
-    height: 15vw;
-    width: 20vw;
+    height: 10vw;
+    width: auto;
     max-width: 350px;
     max-height: 250px;
     object-fit: fill;
     margin: auto;
+    display: flex;
 }
 
 #imageUpload + label {
     margin: 0 auto;
 }
+
+#inputFormWrapper { flex-direction: column; }
+#inputFormWrapper div.input-form-item:not(:last-child) {
+    margin-bottom: 20px;
+}
+#inputFormWrapper div.input-item:not(:last-child) {
+    border-right: solid 1px grey;
+}
+.input-form-item {
+    padding: 2%;
+    line-height: 2;
+}
+.input-form-item > div { padding: 0 1vw; }
 
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
@@ -46,8 +56,17 @@ input::-webkit-inner-spin-button {
 input[type=number] {
   -moz-appearance: textfield;
 }
+input, .custom-select {
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+}
 textarea { resize: none; }
-textarea, input { border: none; font-family: Ubuntu; }
+textarea, input {
+    border: none;
+    font-family: Ubuntu;
+    outline: none;
+}
 
 #textAreaContainer div:first-child { width: 100%; }
 #characterInfo {
@@ -88,20 +107,48 @@ textarea, input { border: none; font-family: Ubuntu; }
     width: 20vw;
 }
 
-#currencyOptions {
-    background: lightgoldenrodyellow;
+#currencyOptionsWrapper {
+    background: white;
     position: absolute;
     z-index: 5;
-    width: auto !important;
+    width: auto;
 }
-ul.currency-option-ul { margin: 0; padding: 10px; }
-li.currency-option-li { list-style: none; margin: 0; padding: 0; display: flex; }
-.currency-key { width: 5vw; }
-.currency-value { width: 20vw; }
-.number-button img { width: 1.5rem; fill: grey; }
+
+#currencyOptions {
+    max-width: 100%;
+    max-height: 80vh;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+}
+
+ul.currency-option-ul {
+    margin: 0;
+    padding: 0;
+    overflow: scroll;
+}
+li.currency-option-li {
+    list-style: none;
+    margin: 0;
+    padding: 6px;
+    display: table;
+}
+li.currency-option-li:hover { background-color: rgb(245, 245, 245); }
+.currency-key {
+    width: 4vw;
+    display: table-cell;
+    font-size: small;
+}
+.currency-value {
+    width: 20vw;
+    font-size: smaller;
+    display: table-cell;
+}
+.number-button img { width: 1.5rem; }
 
 .arrow {
-    border: solid black;
+    border: solid #333;
     border-width: 0 3px 3px 0;
     display: inline-block;
     padding: 3px;
@@ -109,4 +156,8 @@ li.currency-option-li { list-style: none; margin: 0; padding: 0; display: flex; 
 .down {
     transform: rotate(45deg);
     -webkit-transform: rotate(45deg);
+}
+#displayedSelectedOption {
+    width: 75%;
+    display: inline-flex;
 }

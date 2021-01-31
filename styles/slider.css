@@ -1,21 +1,20 @@
-#sliderWrapper {
-    margin: auto;
-}
-
 #sliderItemWrapper {
     width: 100%;
     position: relative;
     margin: 0;
 }
 
-#sliderContainer { overflow: hidden; }
+#sliderContainer {
+    overflow: hidden;
+    width: 70%;
+    margin: 0 auto;
+}
 
 .slider-overflow {
     width: auto;
     min-width: 280px;
     position: relative;
     margin: auto;
-    padding: 0 10%;
     height: 40vw;
     max-height: 800px;
 }

@@ -6,7 +6,7 @@
     <title>Experience Gift | Assesment</title>
 
     <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
-
+    
     <link href="./styles/main.css" rel="stylesheet" type="text/css" />
     <link href="./styles/form.css" rel="stylesheet" type="text/css" />
     <link href="./styles/slider.css" rel="stylesheet" type="text/css" />
@@ -29,38 +29,43 @@
                     <label for="imageUpload"><img class="pointer" id="uploadedImage" alt="Click to choose image"></label>
                 </div>
             </div>
-            <div class="form-item flex-grow-1">
+            <div class="form-item flex-grow-2">
                 <div class="form-item-container" id="textAreaContainer">
                     <textarea id="textInput" class="form-layout border-box-sizing" onkeyup="updateText(this.value)" data-emoji-picker="true"></textarea>
                     <div id="characterInfo"></div>
                 </div>
             </div>
-            <div class="form-item flex-grow-1">
-                <div>
-                    <div class="form-layout flex-wrapper">
-                        <div class="inline-block flex-grow-1">Value</div>
-                        <div class="inline-block flex-grow-1" class="currency-select-wrapper">
+            <div class="form-item flex-grow-2">
+                <div id="inputFormWrapper" class="flex-wrapper">
+                    <div class="form-layout flex-wrapper input-form-item border-box-sizing flex-grow-1">
+                        <div class="inline-block input-item border-box-sizing flex-grow-1">Value</div>
+                        <div class="inline-block input-item border-box-sizing flex-grow-1" class="currency-select-wrapper">
                             <div class="custom-select pointer" onclick="toggleCurrencyOption()">
                                 <span id="displayedSelectedOption"></span>
                                 <i class="arrow down"></i>
                             </div>
-                            <div class="form-layout" id="currencyOptions"></div>
+                            <div class="form-layout" id="currencyOptionsWrapper">
+                                <div id="currencyOptions"></div>  
+                            </div>
                         </div>
-                        <div class="inline-block flex-grow-2"><input type="number" min="25" max="10000" placeholder="25 - 10000"></div>
+                        <div class="inline-block input-item border-box-sizing flex-grow-2">
+                            <input id="valueInput" type="number" min="25" max="10000" placeholder="25 - 10000" onchange="validateValue(this.value)">
+                        </div>
                     </div>
-                    <div class="form-layout flex-wrapper">
-                        <div class="inline-block flex-grow-2">Quantity</div>
-                        <div class="inline-block flex-grow-1">
+                    <div class="form-layout flex-wrapper input-form-item border-box-sizing flex-grow-1">
+                        <div class="inline-block flex-grow-1">Quantity</div>
+                        <div class="inline-block">
                             <a class="number-button minus pointer" onclick="addQuantity(-1)"><img src="./images/minus.svg"></a>
-                            <input id="quantityNumber" type="number" placeholder="1 - 10" value="1">
+                        </div>
+                        <div class="inline-block"><input id="quantityNumber" type="number" placeholder="1 - 10" value="1"></div>
+                        <div class="inline-block">
                             <a class="number-button plus pointer" onclick="addQuantity(1)"><img src="./images/plus.svg"></a>
                         </div>
-                        <div class="inline-block"></div>
                     </div>
                 </div>
             </div>
         </div>
-        <div id="sliderWrapper">
+        <div id="sliderWrapper" class="form-item">
             <div id="sliderItemWrapper" class="form-layout">
                 <div class="slider-overflow">
                     <div id="sliderContainer" class="slider-items">
