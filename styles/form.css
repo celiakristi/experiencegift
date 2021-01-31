@@ -79,7 +79,7 @@ textarea, input {
 }
 
 #displayedText {
-    transform: rotateX(19deg) rotateY(17deg) rotateZ(-51deg) skew(-4deg,-1deg);
+    transform: perspective(1000px) rotateX(9deg) rotateY(9deg) rotateZ(-48deg) skew(-2deg,-3deg);
     position: absolute;
     width: 40%;
     height: 45%;

@@ -6,8 +6,9 @@
 
 #sliderContainer {
     overflow: hidden;
-    width: 70%;
+    width: 70vw;
     margin: 0 auto;
+    max-width: 800px;
 }
 
 .slider-overflow {
